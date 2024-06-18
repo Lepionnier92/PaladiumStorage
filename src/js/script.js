@@ -1,4 +1,4 @@
 // src/js/script.js
-import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap'
 
 /* Votre code JavaScript personnalisé */
