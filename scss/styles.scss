@@ -4,4 +4,9 @@ $primary: #ff5c00;
 
 $theme-colors: (
     "primary": $primary
-)
+);
+@include color-mode(dark) {
+    footer {
+        background-color: var(--bs-body-bg);
+    }
+}
