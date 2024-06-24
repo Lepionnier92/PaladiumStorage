@@ -1,5 +1,15 @@
-body{
+ 
+
+body, [data-bs-theme=light] {
     background-image: url(https://brominee.github.io/PaladiumClicker/background_light.webp);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: inter, sans-serif;
+}
+body, [data-bs-theme=dark] {
+    background-image: url(https://brominee.github.io/PaladiumClicker/background_dark.webp);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -17,10 +27,16 @@ body{
     height:50px;
     margin-right: -11px;
 }
-.nav-item{
+.nav-item {
     font-weight: 500;
     margin-left: 5px;
 }
-.dropdown-item-p{
+.dropdown-item {
     font-weight: 500;
+}
+
+
+.btn-offcanvas{
+    width: 25px;
+    height: 25px;    
 }
