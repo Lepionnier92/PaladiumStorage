@@ -62,24 +62,22 @@
                   aria-expanded="false">
                   PalaStorage
                 </a>
-                <ul class="dropdown-menu ">
-                  <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker">PalaStorage Calculator</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker/ha">Profil</a>
-                  </li>
-                  <li><a class="dropdown-item font-weight"
-                      href="https://brominee.github.io/PaladiumClicker/xp-calculator">Calculateur Metier</a></li>
-                  <li><a class="dropdown-item font-weight"
-                      href="https://brominee.github.io/PaladiumClicker/pala-animation">Crafteur</a></li>
-                  <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker/about">A
-                      propos</a></li>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker">PalaStorage Calculator</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/ha">Profil</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/xp-calculator">Calculateur Metier</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/pala-animation">Crafteur</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/about">Apropos</a></li>
                 </ul>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Status</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
+                <a class="nav-link" aria-current="page" href="#">Market trainer</a>
+              </li>
+              
           </ul>
         </div>
       </div>
@@ -114,90 +112,120 @@
       </form>
     </div>
   </nav>
+  <div class="factions">
+    <div class="row" style="margin-top: 80px;">
+      <div id="global-status"  class="animate-on-hover col faction global">
+        <h5>Statut de Paladium</h5>
+        <p id="global-status-text"></p>
+        <p id="global-players"></p>
+      </div>
 
-  <div class="container-fluid">
-    <div class="row" id="factions">
-        <p class="faction col" id="Soleratl"></p>
-        <p class="faction col" id="Muzdan"></p>
+      <div id="launcher-status" class="animate-on-hover col faction launcher">
+        
+          <h5>Statut du Launcher</h5>
+          <img src="../src/images/Imbali.png" alt="">
+          <p id="launcher-status-text"></p>
+      </div>
     </div>
-    <div class="row">
-      <p class="col faction" id="Manashino"></p>
-      <p class="col faction" id="Luccento"></p>
+
+
+    <div id="factions-status">
+      <h5>Status des Serveurs Factions :</h5>
+        <!-- Les factions seront ajoutées ici par JavaScript -->
     </div>
-    <div class="row">
-      <p class="col faction" id="Imbali"></p>
-      <p class="col faction" id="Keltis"></p>
+    
+    <div id="event-status">
+      <h5>Statut du Serveur Event :</h5>
+      <!-- Le serveur Event sera ajouté ici par JavaScript -->
     </div>
-    <div class="row">
-      <p class="col faction" id="Neolith"></p>
-      <p class="col faction" id="Untaa"></p>
-    </div>
-    <div class="row">
-      <p class="col faction" id="Event"></p>
-    </div>
-    <p id="javaGlobalStatus"></p>
-    <p id="launcherStatus"></p>
   </div>
-  
+  <p style="margin-top: 20px; text-align: center; background-color: #27272a; padding-top: 16px; padding-bottom: 16px; margin: 0; width: 83.88rem;  overflow: hidden;">L'application n'est<strong> ni affiliée ni approuvée </strong>par <span class="fspan"
+    style="color:#ff5c00;">Paladium Games.</span>
+  </p>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const fetchDataAndUpdateDOM = () => {
+        fetch('https://api.paladium.games/v1/status')
+            .then(response => response.json())
+            .then(data => {
+                // Mettre à jour le statut global
+                document.getElementById('global-status-text').textContent = `Statut: ${data.java.global.status}`;
+                document.getElementById('global-players').textContent = `Joueurs: ${data.java.global.players}`;
 
-    <p style="margin-top: 20px; text-align: center; background-color: #27272a; padding-top: 16px; padding-bottom: 16px; margin: 0; width: 83.88rem;  overflow: hidden;">L'application n'est<strong> ni affiliée ni approuvée </strong>par <span class="fspan"
-      style="color:#ff5c00;">Paladium Games.</span>
-    </p>
-  <script src="../src/js/script.js"></script>
+                // Mettre à jour le statut du launcher
+                document.getElementById('launcher-status-text').textContent = `Statut: ${data.launcher.status}`;
+
+                // Mettre à jour le statut des factions
+                const factionsStatus = document.getElementById('factions-status');
+                const eventStatus = document.getElementById('event-status');
+
+                let rowDiv = null;
+                let factionCount = 0;
+
+                for (let faction in data.java.factions) {
+                    let factionDiv = document.getElementById(`faction-${faction}`);
+                    let factionTitle, factionImage, factionStatus, textContainer;
+
+                    if (!factionDiv) {
+                        // Create the faction div if it doesn't exist
+                        factionDiv = document.createElement('div');
+                        factionDiv.id = `faction-${faction}`;
+                        factionDiv.classList.add('col'); // Ajouter la classe col
+                        factionDiv.classList.add('faction'); // Ajouter la classe faction
+                        factionDiv.classList.add('animate-on-hover'); // Ajouter la classe animate-on-hover
+                        
+
+                        factionImage = document.createElement('img');
+                        factionImage.classList.add(`${faction}`)
+                        factionTitle = document.createElement('h5');
+                        factionStatus = document.createElement('p');
+
+                        factionImage.src = `../src/images/${faction}.png`;
+
+                        textContainer = document.createElement('div');
+                        textContainer.classList.add('text-container');
+                        textContainer.appendChild(factionTitle);
+                        textContainer.appendChild(factionStatus);
+
+                        factionDiv.appendChild(factionImage);
+                        factionDiv.appendChild(textContainer);
+
+                        if (faction === 'Event') {
+                            eventStatus.appendChild(factionDiv);
+                        } else {
+                            if (factionCount % 2 === 0) {
+                                // Créer une nouvelle ligne tous les deux factions
+                                rowDiv = document.createElement('div');
+                                rowDiv.classList.add('row');
+                                factionsStatus.appendChild(rowDiv);
+                            }
+                            rowDiv.appendChild(factionDiv);
+                            factionCount++;
+                        }
+                    } else {
+                        factionTitle = factionDiv.querySelector('h5');
+                        factionStatus = factionDiv.querySelector('p');
+                    }
+
+                    // Update the h5 and p elements
+                    factionTitle.textContent = `Serveur: ${faction}`;
+                    factionStatus.textContent = `Statut: ${data.java.factions[faction]}`;
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+    };
+
+    // Appeler la fonction immédiatement au chargement de la page
+    fetchDataAndUpdateDOM();
+
+    // Mettre à jour toutes les 30 secondes
+    setInterval(fetchDataAndUpdateDOM, 1000);
+});
+
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const apiUrl = 'https://api.paladium.games/v1/status';
-
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            // Récupération des informations spécifiques du serveur
-            const javaGlobalStatus = data.java.global.status;
-            const javaGlobalPlayers = data.java.global.players;
-            const factions = data.java.factions;
-            const launcherStatus = data.launcher.status;
-
-            // Mettre à jour les paragraphes existants dans le HTML
-            document.getElementById('javaGlobalStatus').textContent = `Statut du serveur Java : ${javaGlobalStatus}, ${javaGlobalPlayers} joueurs en ligne`;
-            document.getElementById('launcherStatus').textContent = `Statut du launcher : ${launcherStatus}`;
-
-            // Mettre à jour les informations des factions
-            Object.keys(factions).forEach(faction => {
-                const factionP = document.getElementById(faction);
-                if (factionP) {
-                    factionP.textContent = `${faction} : ${factions[faction]}`;
-                } else {
-                    console.warn(`Element with ID ${faction} not found.`);
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-            // Gérer l'erreur si nécessaire
-        });
-});
-
-
-
-
-
-    document.getElementById('themeToggleBtn').addEventListener('click', function () {
-      const htmlElement = document.documentElement;
-      if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
-        htmlElement.setAttribute('data-bs-theme', 'light');
-      } else {
-        htmlElement.setAttribute('data-bs-theme', 'dark');
-      }
-    });
-  </script>
 </body>
 
 </html>
