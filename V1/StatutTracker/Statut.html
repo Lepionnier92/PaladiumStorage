@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statut des services de Paladium</title>
+  <link rel="stylesheet" href="../src/css/mystyles.css">
+  <link rel="stylesheet" href="../src/css/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top" >
+    <div class="container-fluid" >
+      <button class="navbar-toggler btn"
+        style="justify-content: center; align-items: center; width: 2.25rem; height: 2.25rem;" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation">
+        <span class="btn-offcanvas"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+            viewBox="0 0 448 512" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+            </path>
+          </svg>
+        </span>
+      </button>
+      <a class="navbar-icon navbar-brand" href="/PalaStorage.html"><img class="navbar-img"
+          src="https://brominee.github.io/PaladiumClicker/favicon.ico" alt="PalaStorage"></a>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="navbar-img"
+              src="https://brominee.github.io/PaladiumClicker/favicon.ico" alt="PalaStorage"><span
+              style="margin-left: 10px;">Menu</span></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" >
+          <ul class="navbar-nav flex-grow-1 pe-3" >
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                PalaClicker
+              </a>
+              <ul class="dropdown-menu ">
+                <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker">PalaClicker
+                    Optimizer</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker/ha">HA</a>
+                </li>
+                <li><a class="dropdown-item font-weight"
+                    href="https://brominee.github.io/PaladiumClicker/xp-calculator">Calcuateur d'XP</a></li>
+                <li><a class="dropdown-item font-weight"
+                    href="https://brominee.github.io/PaladiumClicker/pala-animation">PalaAnimation Trainer</a></li>
+                <li><a class="dropdown-item font-weight" href="https://brominee.github.io/PaladiumClicker/about">A
+                    propos</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  PalaStorage
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker">PalaStorage Calculator</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/ha">Profil</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/xp-calculator">Calculateur Metier</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/pala-animation">Crafteur</a></li>
+                  <li><a class="dropdown-item disabled font-weight" href="https://brominee.github.io/PaladiumClicker/about">Apropos</a></li>
+                </ul>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Status</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../MarketTracker/Shop.html">Market trainer</a>
+              </li>
+              
+          </ul>
+        </div>
+      </div>
+      <button type="button" class="btn-para btn btn-outline-dark justify-content-end"
+        style="color:white; margin-right: 10px; height: 35px; width: 35px; border: none;"><svg
+          style="margin-bottom: 5px; margin-left: -3px;" stroke="currentColor" fill="currentColor" stroke-width="0"
+          viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="256" cy="256" r="48"></circle>
+          <path
+            d="m470.39 300-.47-.38-31.56-24.75a16.11 16.11 0 0 1-6.1-13.33v-11.56a16 16 0 0 1 6.11-13.22L469.92 212l.47-.38a26.68 26.68 0 0 0 5.9-34.06l-42.71-73.9a1.59 1.59 0 0 1-.13-.22A26.86 26.86 0 0 0 401 92.14l-.35.13-37.1 14.93a15.94 15.94 0 0 1-14.47-1.29q-4.92-3.1-10-5.86a15.94 15.94 0 0 1-8.19-11.82l-5.59-39.59-.12-.72A27.22 27.22 0 0 0 298.76 26h-85.52a26.92 26.92 0 0 0-26.45 22.39l-.09.56-5.57 39.67a16 16 0 0 1-8.13 11.82 175.21 175.21 0 0 0-10 5.82 15.92 15.92 0 0 1-14.43 1.27l-37.13-15-.35-.14a26.87 26.87 0 0 0-32.48 11.34l-.13.22-42.77 73.95a26.71 26.71 0 0 0 5.9 34.1l.47.38 31.56 24.75a16.11 16.11 0 0 1 6.1 13.33v11.56a16 16 0 0 1-6.11 13.22L42.08 300l-.47.38a26.68 26.68 0 0 0-5.9 34.06l42.71 73.9a1.59 1.59 0 0 1 .13.22 26.86 26.86 0 0 0 32.45 11.3l.35-.13 37.07-14.93a15.94 15.94 0 0 1 14.47 1.29q4.92 3.11 10 5.86a15.94 15.94 0 0 1 8.19 11.82l5.56 39.59.12.72A27.22 27.22 0 0 0 213.24 486h85.52a26.92 26.92 0 0 0 26.45-22.39l.09-.56 5.57-39.67a16 16 0 0 1 8.18-11.82c3.42-1.84 6.76-3.79 10-5.82a15.92 15.92 0 0 1 14.43-1.27l37.13 14.95.35.14a26.85 26.85 0 0 0 32.48-11.34 2.53 2.53 0 0 1 .13-.22l42.71-73.89a26.7 26.7 0 0 0-5.89-34.11zm-134.48-40.24a80 80 0 1 1-83.66-83.67 80.21 80.21 0 0 1 83.66 83.67z">
+          </path>
+        </svg></button>
+      <button id="themeToggleBtn" type="button" class=" btn btn-outline-dark"
+        style="color:white; margin-right: 10px; height: 35px; width: 35px; border: none;"><svg
+          style="margin-bottom: 5px; margin-left: -3px;" stroke="currentColor" fill="currentColor" stroke-width="0"
+          viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z">
+          </path>
+        </svg></button>
+      <form class="input-group d-flex" style="width: 250px;" role="search">
+        <input class="form-control" style=" border-width: 0;" type="search" placeholder="Entre ton Pseudo"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-dark" type="submit" id="button-addon2" style="margin-right: 15px;">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+            </path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </nav>
+  <div class="factions">
+    <div class="row" style="margin-top: 80px;">
+      <div id="global-status"  class="text-container animate-on-hover col faction global">
+        <h5>Statut de Paladium</h5>
+        <p id="global-status-text"></p>
+        <p id="global-players"></p>
+      </div>
+
+      <div id="launcher-status" class="text-container animate-on-hover col faction launcher">
+          <img src="../src/images/Launcher.png" alt="">
+          <h5>Statut du Launcher</h5>
+          <p id="launcher-status-text"></p>
+      </div>
+    </div>
+
+    <div id="factions-status">
+      <h5>Status des Serveurs Factions :</h5>
+        <!-- Les factions seront ajoutées ici par JavaScript -->
+    </div>
+    
+    <div id="event-status">
+      <h5>Statut du Serveur Event :</h5>
+      <!-- Le serveur Event sera ajouté ici par JavaScript -->
+    </div>
+  </div>
+  <p style="margin-top: 20px; text-align: center; background-color: #27272a; padding-top: 16px; padding-bottom: 16px; margin: 0; width: 83.88rem;  overflow: hidden;">L'application n'est<strong> ni affiliée ni approuvée </strong>par <span class="fspan"
+    style="color:#ff5c00;">Paladium Games.</span>
+  </p>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const fetchDataAndUpdateDOM = () => {
+        fetch('https://api.paladium.games/v1/status')
+            .then(response => response.json())
+            .then(data => {
+                // Mettre à jour le statut global
+                document.getElementById('global-status-text').textContent = `Statut: ${data.java.global.status}`;
+                document.getElementById('global-players').textContent = `Joueurs: ${data.java.global.players}`;
+
+                // Mettre à jour le statut du launcher
+                document.getElementById('launcher-status-text').textContent = `Statut: ${data.launcher.status}`;
+
+                // Mettre à jour le statut des factions
+                const factionsStatus = document.getElementById('factions-status');
+                const eventStatus = document.getElementById('event-status');
+
+                let rowDiv = null;
+                let factionCount = 0;
+
+                for (let faction in data.java.factions) {
+                    let factionDiv = document.getElementById(`faction-${faction}`);
+                    let factionTitle, factionImage, factionStatus, textContainer;
+
+                    if (!factionDiv) {
+                        // Create the faction div if it doesn't exist
+                        factionDiv = document.createElement('div');
+                        factionDiv.id = `faction-${faction}`;
+                        factionDiv.classList.add('col'); // Ajouter la classe col
+                        factionDiv.classList.add('faction'); // Ajouter la classe faction
+                        factionDiv.classList.add('animate-on-hover'); // Ajouter la classe animate-on-hover
+                        
+
+                        factionImage = document.createElement('img');
+                        factionImage.classList.add(`${faction}`)
+                        factionTitle = document.createElement('h5');
+                        factionStatus = document.createElement('p');
+
+                        factionImage.src = `../src/images/${faction}.png`;
+
+                        textContainer = document.createElement('div');
+                        textContainer.classList.add('text-container');
+                        textContainer.appendChild(factionTitle);
+                        textContainer.appendChild(factionStatus);
+
+                        factionDiv.appendChild(factionImage);
+                        factionDiv.appendChild(textContainer);
+
+                        if (faction === 'Event') {
+                            eventStatus.appendChild(factionDiv);
+                        } else {
+                            if (factionCount % 2 === 0) {
+                                // Créer une nouvelle ligne tous les deux factions
+                                rowDiv = document.createElement('div');
+                                rowDiv.classList.add('row');
+                                factionsStatus.appendChild(rowDiv);
+                            }
+                            rowDiv.appendChild(factionDiv);
+                            factionCount++;
+                        }
+                    } else {
+                        factionTitle = factionDiv.querySelector('h5');
+                        factionStatus = factionDiv.querySelector('p');
+                    }
+
+                    // Update the h5 and p elements
+                    factionTitle.textContent = `Serveur ${faction}`;
+                    factionStatus.textContent = `Statut: ${data.java.factions[faction]}`;
+                }
+            })
+            .catch(error => console.error('Erreur:', error));
+    };
+
+    // Appeler la fonction immédiatement au chargement de la page
+    fetchDataAndUpdateDOM();
+
+    // Mettre à jour toutes les 30 secondes
+    setInterval(fetchDataAndUpdateDOM, 1000);
+});
+
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
