@@ -6,17 +6,29 @@
   <title>PalaStorage</title>
   <link rel="stylesheet" href="./src/styles.scss">
   <link rel="stylesheet" href="./src/styles.css">
+  <link rel="stylesheet" href="./src/V1/css/mystyles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="card" style="width: 18rem;">
-        <img src="./src/V1/images/Drawing 35.webp" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
+  <div class="row">
+      <div class="text-container card" style="width: 14rem; margin-left: 30%; margin-top: 8%; padding: 15px;">
+        <a href="./V1/index.html" class="btn" style="border: 0;">
+          <img src="./src/V1/images/pal.webp" class="card-img-top" height="auto" width="70px" style="padding-bottom: 25px;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">PalaStorage V1</h5>
+          </div>
+        </a>
+      </div>
+      <div class="card" style="width: 14rem; margin-left: 10%; margin-top: 8%; padding: 15px;">
+        <a href="javascript:void(0);" class="btn" style="border: 0;" onclick="checkPassword()">
+          <img src="./src/V1/images/dev.webp" class="card-img-top" height="auto" width="50px" style="padding-bottom: 25px;" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">PalaStorage V2</h5>
+          </div>
+        </a>
+      </div>
+  </div>
+  <script src="./src/script.js"></script>
 </body>
