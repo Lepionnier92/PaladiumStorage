@@ -6,32 +6,18 @@
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-// Then add additional custom code here
+$primary: #ff5c00;
+$danger: #ee3925;
 
-body, [data-bs-theme=light] {
-    background-image: url(https://brominee.github.io/PaladiumClicker/background_light.webp);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    overflow: hidden;
-}
-body, [data-bs-theme=dark] {
-    background-image: url(https://brominee.github.io/PaladiumClicker/background_dark.webp);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    overflow-x:auto;
-}
-btnsite {
-    height: 400px;
-}
+$theme-colors: (
+    "primary": $primary,
+    "danger": $danger
+);
+
+// Create your own map
+$custom-colors: (
+  "custom-color": #27272a7e
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);

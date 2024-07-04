@@ -1,7 +1,7 @@
 body, [data-bs-theme=light] {
     background-image: url(https://brominee.github.io/PaladiumClicker/background_light.webp);
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed sti;
     background-position: center;
     background-repeat: no-repeat;
     font-family: "Inter", sans-serif;
@@ -20,13 +20,7 @@ body, [data-bs-theme=dark] {
     font-style: normal;
     font-variation-settings: "slnt" 0;
 }
-.navbar{
-    height: 63px;
-}
-.nav-item {
-    font-weight: 500;
-    margin-left: 5px;
-}
-.dropdown-item {
-    font-weight: 500;
+.dev-badge{
+    height: 50px;
+    width: 50px;
 }
